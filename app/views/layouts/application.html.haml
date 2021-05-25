@@ -1,0 +1,11 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title AwesomeEvents
+    = render '/shared/head'
+
+  %body
+    = render '/shared/header'
+    .container
+      = yield
