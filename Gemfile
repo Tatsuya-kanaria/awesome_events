@@ -14,6 +14,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-rails'
 end
 
 group :development do
@@ -33,6 +34,6 @@ gem 'hamlit-rails', '~> 0.2.3'
 gem 'omniauth', '~> 1.9.1'
 gem 'omniauth-github', '~> 1.4.0'
 gem 'omniauth-rails_csrf_protection', '~> 0.1.2'
-gem 'dotenv-rails'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
