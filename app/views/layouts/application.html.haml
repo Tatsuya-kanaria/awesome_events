@@ -8,6 +8,7 @@
   %body
     = render '/shared/header'
     .container
+      = render '/shared/flash'
       = yield
     .bg-info.p-2
       = debug(params) if Rails.env.development?
