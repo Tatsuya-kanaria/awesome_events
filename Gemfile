@@ -35,5 +35,6 @@ gem 'omniauth', '~> 1.9.1'
 gem 'omniauth-github', '~> 1.4.0'
 gem 'omniauth-rails_csrf_protection', '~> 0.1.2'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'simple_form'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
