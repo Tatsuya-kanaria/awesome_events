@@ -1,0 +1,11 @@
+- now = Time.zone.now
+%h1.mt-2 イベント作成
+= simple_form_for @event, class: 'form-horizontal' do |f|
+  = f.error_notification
+  = f.input :name,    input_html: { class: 'form-control' }
+  = f.input :place,   input_html: { class: 'form-control' }
+  = f.input :start_at
+  = f.input :end_at
+  = f.input :content, input_html: { class: 'form-control', row: 10}
+  .form-actions
+    = f.button :submit, class: '.btn btn-primary btn-block', data: { disable_with: '処理中...', confirm: '本当によろしいですか？' }
