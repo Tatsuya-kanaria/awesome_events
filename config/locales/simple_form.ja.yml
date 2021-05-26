@@ -1,0 +1,23 @@
+ja:
+  helpers:
+    button:
+        create: '登録する'
+        update: '更新する'
+        submit: '保存する'
+  simple_form:
+    error_notification:
+        default_message: '入力を確認してください'
+    model:
+      event: 'イベント'
+    labels:
+      event:
+        name:     '名前'
+        place:    '場所'
+        start_at: '開始時間'
+        end_at:   '終了時間'
+        content:  'イベント内容'
+    hints:
+      event:
+
+    placeholders:
+      event:
