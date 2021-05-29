@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       event: 'イベント'
+      ticket: 'チケット'
     attributes:
       event:
         name:     '名前'
@@ -10,3 +11,5 @@ ja:
         end_at:   '終了時間'
         content:  'イベント内容'
         image:    'イメージ画像'
+      ticket:
+        comment:  'コメント'
