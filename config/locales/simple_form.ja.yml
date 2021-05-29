@@ -9,6 +9,7 @@ ja:
         default_message: '入力を確認してください'
     model:
       event: 'イベント'
+      ticket: 'チケット'
     labels:
       event:
         name:     '名前'
@@ -16,6 +17,8 @@ ja:
         start_at: '開始時間'
         end_at:   '終了時間'
         content:  'イベント内容'
+      ticket:
+        comment:  'コメント'
     hints:
       event:
 
