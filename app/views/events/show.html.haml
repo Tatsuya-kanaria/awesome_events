@@ -20,13 +20,15 @@
         = link_to("https://github.com/#{@event.owner.name}", class: "card-link") do
           = image_tag @event.owner.image_url, width: 50, height: 50
           = "@#{@event.owner.name}"
-  .col-4
+  .col-4.text-center
     - if @event.created_by?(current_user)
-      = link_to 'イベントを編集する', edit_event_path(@event), class: 'btn btn-info btn-lg btn-block'
-      = link_to 'イベントを削除する', event_path(@event), class: '.btn btn-danger btn-lg btn-block', method: :delete, data: { disable_with: '処理中...', confirm: '本当に削除しますか？' }
-    - if logged_in?
-      -# %button.btn.btn-primary.btn-lg.btn-block{ 'data-toggle': 'modal', 'data-target': '#createTicket' }
-      -#   参加する
+      = link_to 'イベントを編集', edit_event_path(@event), class: 'btn btn-info btn-lg btn-block'
+      = link_to 'イベントを削除', event_path(@event), class: '.btn btn-danger btn-lg btn-block', method: :delete, data: { disable_with: '処理中...', confirm: '本当に削除しますか？' }
+      / 主催者に参加ボタンは不要
+      / - else
+    - if @ticket
+      = link_to '参加をキャンセル', event_ticket_path(@event, @ticket), method: :delete, class: 'btn btn-warning btn-lg btn-block'
+    - elsif logged_in?
       = link_to '参加する', new_event_ticket_path(@event), class: 'btn btn-primary btn-lg btn-block', data: { target: '#createTicket', toggle: 'modal' }
       .modal.fade#createTicket
         .modal-dialog
@@ -44,13 +46,13 @@
                 = f.button '送信', class: 'btn btn-primary'
     - else
       = link_to '参加する', new_event_ticket_path(@event), class: 'btn btn-primary btn-lg btn-block'
-      %hr
-      .card.mb-2
-        %h5.card-header 参加者
-        %ul.list-group.list-group-flash
-          - @tickets.each do |ticket|
-            %li.list-group-item
-              = link_to(url_for_github(ticket.user), class: 'card-link') do
-                = image_tag ticket.user.image_url, width: 20, height: 20
-                = "@#{ticket.user.name}"
-              = ticket.comment
+    %hr
+    .card.mb-2
+      %h5.card-header 参加者
+      %ul.list-group.list-group-flash
+        - @tickets.each do |ticket|
+          %li.list-group-item
+            = link_to(url_for_github(ticket.user), class: 'card-link') do
+              = image_tag ticket.user.image_url, width: 20, height: 20
+              = "@#{ticket.user.name}"
+            = ticket.comment
