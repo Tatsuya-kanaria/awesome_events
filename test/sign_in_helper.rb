@@ -9,12 +9,23 @@ module SignInHelper
             }
     )
 
-    visit root_url
-    click_on 'GitHubでログイン'
-    @current_user = user
+    case
+    when respond_to?(:viset)
+      visit root_url
+      click_on 'GitHubでログイン'
+    when respond_to?(:get)
+      get '/auth/github/callback'
+    else
+      raise NotlmplementedError.new
+    end
+      @current_user = user
   end
 
   def current_user
     @current_user
+  end
+
+  class ActionDispatch::IntegrationTest
+    include SignInHelper
   end
 end
