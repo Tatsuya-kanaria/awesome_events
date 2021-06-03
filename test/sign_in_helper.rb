@@ -5,27 +5,27 @@ module SignInHelper
       user.provider,
       uid: user.uid,
       info: { nickname: user.name,
-              image: user.image_url
-            }
+              image: user.image_url,
+      }
     )
 
     case
-    when respond_to?(:viset)
+    when respond_to?(:visit)
       visit root_url
       click_on 'GitHubでログイン'
     when respond_to?(:get)
-      get '/auth/github/callback'
+      get "/auth/github/callback"
     else
       raise NotlmplementedError.new
     end
-      @current_user = user
+    @current_user = user
   end
 
   def current_user
     @current_user
   end
+end
 
-  class ActionDispatch::IntegrationTest
-    include SignInHelper
-  end
+class ActionDispatch::IntegrationTest
+  include SignInHelper
 end
