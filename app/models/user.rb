@@ -8,7 +8,6 @@ class User < ApplicationRecord
     validates :image_url
   end
   with_options uniqueness: true do
-    validates :provider
     validates :uid
   end
 
