@@ -15,6 +15,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -37,5 +38,6 @@ gem 'omniauth-rails_csrf_protection', '~> 0.1.2'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'simple_form'
 gem 'rails-i18n', '~> 6.0.0'
+gem 'rexml'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
