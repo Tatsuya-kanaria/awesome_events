@@ -17,6 +17,8 @@ ja:
         start_at: '開始時間'
         end_at:   '終了時間'
         content:  'イベント内容'
+        image:    'イメージ画像'
+        remove_image: '画像を削除する'
       ticket:
         comment:  'コメント'
     hints:

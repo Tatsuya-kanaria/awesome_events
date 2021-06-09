@@ -39,5 +39,7 @@ gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'simple_form'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'rexml'
+gem 'image_processing', '~> 1.2'
+gem 'active_storage_validations', '~> 0.8.8'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
