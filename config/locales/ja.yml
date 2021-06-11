@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    models:
+      event: 'イベント'
+      ticket: 'チケット'
+    attributes:
+      event:
+        name:     '名前'
+        place:    '場所'
+        start_at: '開始時間'
+        end_at:   '終了時間'
+        content:  'イベント内容'
+        image:    'イメージ画像'
+        remove_image: '画像を削除する'
+      ticket:
+        comment:  'コメント'
