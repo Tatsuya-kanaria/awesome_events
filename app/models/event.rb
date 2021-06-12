@@ -19,9 +19,21 @@ class Event < ApplicationRecord
   has_many :tickets, dependent: :destroy
   belongs_to :owner, class_name: 'User'
 
+  searchkick language: "japanese"
+
   def created_by?(user)
     return false unless user
     owner_id == user.id
+  end
+
+  def search_data
+    {
+      name: name,
+      place: place,
+      content: content,
+      owner_name: owner&.name,
+      start_at: start_at
+    }
   end
 
     private
