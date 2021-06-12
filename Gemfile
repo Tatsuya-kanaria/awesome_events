@@ -42,5 +42,6 @@ gem 'rexml'
 gem 'image_processing', '~> 1.2'
 gem 'active_storage_validations', '~> 0.8.8'
 gem 'kaminari', '~> 1.2.0', :git => 'https://github.com/kaminari/kaminari'
+gem 'searchkick', '~> 4.3.0'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

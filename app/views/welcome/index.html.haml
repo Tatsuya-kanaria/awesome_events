@@ -1,6 +1,16 @@
 %h1 イベント一覧
 
-%ul.list-group.mb-4
+= form_with(model: @event_search_form, url: root_path, method: :get) do |f|
+  .form-group.mb-2
+    = f.label :keyword, "キーワード"
+    = f.text_field :keyword, class: "form-control"
+  .form-group.mb-2
+    = f.label :start_at, "以降に開催されるイベント"
+    = f.date_field :start_at, class: "form-control"
+  .form-group.mb-2
+    = f.submit "検索", class: "btn btn-primary"
+
+%ul.list-group.my-4
   - @events.each do |event|
     = link_to(event_path(event.id), class: 'list-group-item list-group-item-action') do
       %h5.list-group-item-heading
