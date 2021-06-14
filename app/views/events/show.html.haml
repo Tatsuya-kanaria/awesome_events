@@ -28,14 +28,14 @@
           退会したユーザーです
   .col-4.text-center
     - if @event.created_by?(current_user)
-      = link_to 'イベントを編集', edit_event_path(@event), class: 'btn btn-info btn-lg btn-block'
-      = link_to 'イベントを削除', event_path(@event), class: '.btn btn-danger btn-lg btn-block', method: :delete, data: { disable_with: '処理中...', confirm: '本当に削除しますか？' }
+      = link_to 'イベントを編集', edit_event_path(@event), class: 'btn btn-info btn-lg btn-block mb-2'
+      = link_to 'イベントを削除', event_path(@event), class: 'btn btn-danger btn-lg btn-block mb-2', method: :delete, data: { disable_with: '処理中...', confirm: '本当に削除しますか？' }
       / 主催者に参加ボタンは不要
       / - else
     - if @ticket
-      = link_to '参加をキャンセル', event_ticket_path(@event, @ticket), method: :delete, class: 'btn btn-warning btn-lg btn-block'
+      = link_to '参加をキャンセル', event_ticket_path(@event, @ticket), method: :delete, class: 'btn btn-warning btn-lg btn-block mb-2'
     - elsif logged_in?
-      = link_to '参加する', new_event_ticket_path(@event), class: 'btn btn-primary btn-lg btn-block', data: { target: '#createTicket', toggle: 'modal' }
+      = link_to '参加する', new_event_ticket_path(@event), class: 'btn btn-primary btn-lg btn-block mb-2', data: { target: '#createTicket', toggle: 'modal' }
       .modal.fade#createTicket
         .modal-dialog
           .modal-content
